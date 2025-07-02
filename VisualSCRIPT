@@ -1,4 +1,46 @@
-loadstring(game:HttpGet("https://raw.githubusercontent.com/alaturk123/AgainWHYYY/refs/heads/main/WHYimascripter"))()
+local Players = game:GetService("Players")
+local player = Players.LocalPlayer
+
+-- Hidden folder and file to track strikes
+local folder = "SystemData"
+local flaggedFile = folder.."/.XTRF_subkey.lock"
+
+-- Create folder if it doesn't exist
+if not isfolder(folder) then
+    makefolder(folder)
+end
+
+-- Read current strike count
+local strike = 0
+pcall(function()
+    local data = readfile(flaggedFile)
+    strike = tonumber(data) or 0
+end)
+
+-- Write new strike count
+local function setStrike(count)
+    pcall(function()
+        writefile(flaggedFile, tostring(count))
+    end)
+end
+
+-- Try to copy the YouTube link (works only on supported executors)
+pcall(function()
+    setclipboard("https://youtube.com/@devonxtrfscripts?si=nOxhFvjHEvZpQGKp")
+end)
+
+-- Kick logic
+if strike == 0 then
+    setStrike(1)
+    wait(1)
+    player:Kick("You must subscribe and join my Discord first YOUTUBE: XTRF Scripts")
+elseif strike == 1 then
+    setStrike(2)
+    wait(1)
+    player:Kick("[Detected Not Subscribed] {!?Try Again Later!?}")
+end
+
+-- If strike is 2 or more, do nothing (script continues)
 wait(0.5)
 game.StarterGui:SetCore("SendNotification", {
     Title = "🔔 You must be subscribed to me for 1/2 Day",
