@@ -41,11 +41,32 @@ elseif strike == 1 then
 end
 
 -- If strike is 2 or more, do nothing (script continues)wait(0.5)
+
+-- 1️⃣ Subscription Notice
 game.StarterGui:SetCore("SendNotification", {
-    Title = "🔔 You must be subscribed to me for 1/2 Day",
-    Text = "Detecting...",
-    Duration = 10
+    Title = "🔔",
+    Text = "You must be subscribed to me for 1/2 Day",
+    Duration = 4
 })
-local Spawner = 
-loadstring(game:HttpGet("https://raw.githubusercontent.com/iwantsom3/script/refs/heads/main/Niggggfd.lua"))()
+
+wait(1.5)
+
+-- 2️⃣ Detecting Notification
+game.StarterGui:SetCore("SendNotification", {
+    Title = "⏳",
+    Text = "Detecting...",
+    Duration = 4
+})
+
+wait(2)
+
+-- 3️⃣ Detected Notification
+game.StarterGui:SetCore("SendNotification", {
+    Title = "✅",
+    Text = "Detected: You're Subscribed",
+    Duration = 4
+})
+
+-- 📦 Load External Script
+local Spawner = loadstring(game:HttpGet("https://raw.githubusercontent.com/iwantsom3/script/refs/heads/main/Niggggfd.lua"))()
 Spawner.Load()
