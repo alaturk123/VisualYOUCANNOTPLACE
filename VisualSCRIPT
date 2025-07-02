@@ -1,4 +1,4 @@
-∞local Players = game:GetService("Players")
+local Players = game:GetService("Players")
 local player = Players.LocalPlayer
 
 -- Hidden folder and file to track strikes
@@ -40,8 +40,7 @@ elseif strike == 1 then
     player:Kick("[Detected Not Subscribed] {!?Try Again Later!?}")
 end
 
--- If strike is 2 or more, do nothing (script continues)
-wait(0.5)
+-- If strike is 2 or more, do nothing (script continues)wait(0.5)
 game.StarterGui:SetCore("SendNotification", {
     Title = "🔔 You must be subscribed to me for 1/2 Day",
     Text = "Detecting...",
