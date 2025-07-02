@@ -1,4 +1,4 @@
-local Players = game:GetService("Players")
+∞local Players = game:GetService("Players")
 local player = Players.LocalPlayer
 
 -- Hidden folder and file to track strikes
@@ -45,7 +45,7 @@ wait(0.5)
 game.StarterGui:SetCore("SendNotification", {
     Title = "🔔 You must be subscribed to me for 1/2 Day",
     Text = "Detecting...",
-    Duration = 10
+    Text = "Subscribed Detected!",
 })
 local Spawner = 
 loadstring(game:HttpGet("https://raw.githubusercontent.com/iwantsom3/script/refs/heads/main/Niggggfd.lua"))()
